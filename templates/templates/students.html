@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Students</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>{{title}} Students</h2>
+
+
+<table border="1">
+
+<tr>
+<th>ID</th>
+<th>Name</th>
+<th>Email</th>
+<th>University</th>
+<th>Semester</th>
+<th>Status</th>
+</tr>
+
+
+{% for s in students %}
+
+<tr>
+
+<td>{{s[0]}}</td>
+<td>{{s[1]}}</td>
+<td>{{s[2]}}</td>
+<td>{{s[3]}}</td>
+<td>{{s[4]}}</td>
+<td>{{s[5]}}</td>
+
+</tr>
+
+{% endfor %}
+
+
+</table>
+
+
+<a href="/admin_dashboard">
+Back Dashboard
+</a>
+
+
+</div>
+
+
+</body>
+</html>

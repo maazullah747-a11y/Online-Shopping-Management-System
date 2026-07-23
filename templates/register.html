@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PMD Internship Registration</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="form-container">
+
+   <div class="header">
+
+    <img src="{{ url_for('static', filename='images/pmd_logo.png') }}"
+         alt="PMD Logo"
+         class="pmd-logo">
+
+    <div class="header-text">
+
+        <h1>Pakistan Meteorological Department (PMD)</h1>
+
+        <h2> profile creation </h2>
+
+    </div>
+
+</div>
+
+    <form action="/register" method="POST" enctype="multipart/form-data">
+
+        <div class="main-form">
+
+            <!-- Profile Picture -->
+
+
+<div class="profile-box">
+
+    <label for="profile_pic" class="upload-box">
+
+        <img id="profilePreview"
+             src=""
+             style="display:none;width:100%;height:100%;border-radius:50%;object-fit:cover;">
+
+        <div id="profileText">
+            ○
+            <br><br>
+            Profile Picture
+            <br><br>
+            Click to Upload
+        </div>
+
+    </label>
+
+    <input
+        type="file"
+        id="profile_pic"
+        name="profile_pic"
+        accept="image/*"
+        hidden>
+
+</div>
+
+
+
+          <div class="fields">
+
+    <h2>Personal Information</h2>
+
+    <label>Full Name <span class="required">*</span></label>
+    <input type="text" name="fullname" placeholder="Enter your full name" required>
+
+    <label>Father's Name <span class="required">*</span></label>
+    <input type="text" name="fathername" placeholder="Enter your father's name" required>
+
+    <label>Email Address <span class="required">*</span></label>
+    <input type="email" name="email" placeholder="Enter your email" required>
+
+    <label>Phone Number <span class="required">*</span></label>
+    <input type="tel"
+           name="phone"
+           placeholder="03XXXXXXXXX"
+           pattern="[0-9]{11}"
+           required>
+
+    <label>CNIC Number <span class="required">*</span></label>
+    <input type="text"
+           name="cnic"
+           placeholder="35202-1234567-1"
+           pattern="[0-9]{5}-[0-9]{7}-[0-9]"
+           required>
+
+    <label>Date of Birth <span class="required">*</span></label>
+    <input type="date" name="dob" required>
+
+    <label>Gender <span class="required">*</span></label>
+    <select name="gender" required>
+        <option value="">Select Gender</option>
+        <option>Male</option>
+        <option>Female</option>
+    </select>
+
+    <label>Address <span class="required">*</span></label>
+    <textarea name="address"
+              rows="3"
+              placeholder="Enter your address"
+              required></textarea>
+
+</div>
+</div>
+
+<hr>
+
+<div class="edu-cert-container">
+
+    <!-- Educational Information -->
+
+    <hr>
+
+<div class="edu-cert-container">
+
+    <!-- Educational Information -->
+
+    <div class="education-section">
+
+        <h2>Educational Information</h2>
+
+        <label>University</label>
+        <input type="text" name="university" required>
+
+        <label>Degree</label>
+        <input type="text" name="degree" placeholder="BS Computer Science" required>
+
+        <label>Semester</label>
+        <input type="number" name="semester" min="1" max="8" required>
+
+      
+
+        <label>Expected Graduation Year</label>
+        <input type="number" name="graduation_year" required>
+
+        <label>CGPA</label>
+<input type="number" 
+       step="0.01" 
+       name="cgpa" 
+       placeholder="Enter CGPA"
+       required>
+
+
+<label>Preferred Department</label>
+
+<select name="department" required>
+
+<option value="">Select Department</option>
+
+<option value="IT">IT Department</option>
+
+<option value="Research">Research Department</option>
+
+<option value="Weather">Weather Forecasting</option>
+
+<option value="Data Science">Data Science</option>
+
+</select>
+
+    </div>
+
+
+    <!-- Certification -->
+
+    <div class="certification-section">
+
+        <h2>Certifications <span class="optional">(Optional)</span></h2>
+
+        <label>Certificate Name</label>
+        <input type="text"
+               name="certificate_name"
+               placeholder="Python, AI, Web Development">
+
+        <label>Institute / Platform</label>
+        <input type="text"
+               name="certificate_provider"
+               placeholder="Coursera, DigiSkills">
+
+        <label>Completion Year</label>
+        <input type="number"
+               name="certificate_year"
+               placeholder="2026">
+
+        <label>Certificate File</label>
+        <input type="file"
+               name="certificate_file"
+               accept=".pdf,.jpg,.jpeg,.png">
+
+    </div>
+
+</div>
+
+<hr>
+
+<div class="skills-section">
+
+    <h2>Technical Skills</h2>
+
+    <label>Describe Your Skills</label>
+
+    <textarea 
+        name="skills"
+        rows="6"
+        maxlength="250"
+        placeholder="Write your technical skills here "
+        required></textarea>
+
+    <small></small>
+
+</div>
+
+<hr>
+
+<div class="languages-section">
+
+    <h2>Languages <span class="optional">(Optional)</span></h2>
+
+    <label>Languages You Know</label>
+
+    <textarea
+        name="languages"
+        rows="4"
+        placeholder="e.g. English, Urdu, Punjabi"
+        ></textarea>
+
+</div>
+
+        <!-- Resume -->
+
+        <div class="upload-section">
+
+   <label for="resume" class="resume-box">
+
+    <input
+        type="file"
+        id="resume"
+        name="resume"
+        accept=".pdf,.doc,.docx"
+        hidden
+        required>
+
+    <div id="resumeText">
+
+        📄
+
+        <br><br>
+
+        Resume (PDF / DOC / DOCX)
+
+        <br><br>
+
+        Click to Upload
+
+    </div>
+
+</label>
+
+</div>
+
+
+        <hr>
+
+        <h2>Identity Verification</h2>
+
+
+        <div class="cnic-section">
+
+            <!-- CNIC FRONT -->
+
+            <label for="cnic_front" class="cnic-box">
+
+    <img id="frontPreview"
+         src=""
+         style="display:none;width:100%;height:100%;object-fit:cover;">
+
+    <div id="frontText">
+
+        CNIC FRONT
+
+        <br><br>
+
+        Click to Upload
+
+    </div>
+
+</label>
+
+<input
+type="file"
+id="cnic_front"
+name="cnic_front"
+accept="image/*"
+hidden>
+
+            <!-- CNIC BACK -->
+
+            <label class="cnic-box">
+
+                <input
+                    type="file"
+                    id="cnic_back"
+                    name="cnic_back"
+                    accept="image/*"
+                    hidden>
+
+                <img
+                    id="backPreview"
+                    src=""
+                    style="display:none;width:180px;height:110px;object-fit:cover;">
+
+                <div id="backText">
+
+                    CNIC BACK
+
+                    <br><br>
+
+                    Click to Upload
+
+                </div>
+
+            </label>
+
+        </div>
+
+        <br>
+
+        <button type="submit">
+            Submit Profile
+        </button>
+
+    </form>
+
+</div>
+
+
+
+<script>
+
+function previewImage(inputId, previewId, textId){
+
+    const input = document.getElementById(inputId);
+
+    input.addEventListener("change", function(){
+
+        const file = this.files[0];
+
+        if(file){
+
+            const reader = new FileReader();
+
+            reader.onload = function(e){
+
+                document.getElementById(previewId).src = e.target.result;
+                document.getElementById(previewId).style.display = "block";
+                document.getElementById(textId).style.display = "none";
+
+            };
+
+            reader.readAsDataURL(file);
+
+        }
+
+    });
+
+}
+
+// Profile Preview
+previewImage("profile_pic","profilePreview","profileText");
+
+// CNIC Front Preview
+previewImage("cnic_front","frontPreview","frontText");
+
+// CNIC Back Preview
+previewImage("cnic_back","backPreview","backText");
+
+
+// Resume File Name Show
+
+const resume = document.getElementById("resume");
+
+resume.addEventListener("change", function(){
+
+    if(this.files.length > 0){
+
+        document.getElementById("resumeText").innerHTML =
+        "📄<br><br>" +
+        this.files[0].name +
+        "<br><br><span style='color:green;'>Resume Selected Successfully</span>";
+
+    }
+
+});
+
+</script>
+
+</body>
+
+</html>

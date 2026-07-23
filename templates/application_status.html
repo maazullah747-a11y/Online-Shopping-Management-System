@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Application Status</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+<style>
+
+body{
+    font-family:Arial;
+    background:#f2f2f2;
+}
+
+.container{
+    width:60%;
+    margin:40px auto;
+    background:white;
+    padding:30px;
+    border-radius:10px;
+    box-shadow:0 0 10px gray;
+}
+
+h2{
+    text-align:center;
+    color:#003366;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+td{
+    padding:12px;
+    border-bottom:1px solid #ddd;
+}
+
+.status{
+    color:green;
+    font-weight:bold;
+    font-size:20px;
+    text-align:center;
+}
+
+a{
+    display:inline-block;
+    margin-top:20px;
+    background:#003366;
+    color:white;
+    padding:10px 20px;
+    text-decoration:none;
+    border-radius:5px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Your Internship Application</h2>
+
+<table>
+
+<tr>
+<td><b>Full Name</b></td>
+<td>{{ application.fullname }}</td>
+</tr>
+
+<tr>
+<td><b>Email</b></td>
+<td>{{ application.email }}</td>
+</tr>
+
+<tr>
+<td><b>Phone</b></td>
+<td>{{ application.phone }}</td>
+</tr>
+
+<tr>
+<td><b>University</b></td>
+<td>{{ application.university }}</td>
+</tr>
+
+<tr>
+<td><b>Semester</b></td>
+<td>{{ application.semester }}</td>
+</tr>
+
+<tr>
+<td><b>Status</b></td>
+<td class="status">{{ application.status }}</td>
+</tr>
+
+</table>
+
+<br>
+
+<center>
+
+<p><b>Your application has already been submitted.</b></p>
+
+<a href="/logout">
+Logout
+</a>
+
+</center>
+
+</div>
+
+</body>
+</html>

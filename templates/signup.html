@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Create Account</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+
+<body>
+
+
+<div class="form-box">
+
+
+<h2>Create Account</h2>
+
+
+<form action="/signup" method="POST">
+
+
+<label>Full Name</label>
+<input type="text" name="fullname" required>
+
+
+<label>Email Address</label>
+<input type="email" name="email" required>
+
+
+<label>Password</label>
+<input type="password" name="password" required>
+
+
+<label>Confirm Password</label>
+<input type="password" name="confirm_password" required>
+
+
+<button type="submit">
+Create Account
+</button>
+
+
+</form>
+
+
+<p>
+Already have account?
+
+<a href="/login">
+Login
+</a>
+
+</p>
+
+
+</div>
+
+
+</body>
+</html>

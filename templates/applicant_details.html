@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Applicant Information</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+<style>
+
+body{
+    font-family:Arial,sans-serif;
+    background:#f4f6f9;
+    margin:0;
+}
+
+.header{
+    background:#003366;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+.container{
+    width:80%;
+    margin:30px auto;
+    background:white;
+    padding:30px;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,.2);
+}
+
+h2{
+    color:#003366;
+    border-bottom:2px solid #ddd;
+    padding-bottom:10px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:20px;
+}
+
+td{
+    padding:12px;
+    border-bottom:1px solid #ddd;
+}
+
+.label{
+    font-weight:bold;
+    width:250px;
+}
+
+.btn{
+    display:inline-block;
+    padding:10px 18px;
+    color:white;
+    text-decoration:none;
+    border-radius:5px;
+    margin-right:10px;
+}
+
+.green{
+    background:#198754;
+}
+
+.red{
+    background:#dc3545;
+}
+
+.blue{
+    background:#0d6efd;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+<h1>Applicant Information</h1>
+</div>
+
+<div class="container">
+
+
+
+<h2>👤 Student Information</h2>
+
+<table>
+
+<tr>
+    <td class="label">Full Name</td>
+    <td>{{ applicant.fullname }}</td>
+</tr>
+
+<tr>
+    <td class="label">Father Name</td>
+    <td>{{ applicant.fathername }}</td>
+</tr>
+
+<tr>
+    <td class="label">Email</td>
+    <td>{{ applicant.email }}</td>
+</tr>
+
+<tr>
+    <td class="label">Phone</td>
+    <td>{{ applicant.phone }}</td>
+</tr>
+
+<tr>
+    <td class="label">CNIC</td>
+    <td>{{ applicant.cnic }}</td>
+</tr>
+
+<tr>
+    <td class="label">Date of Birth</td>
+    <td>{{ applicant.dob }}</td>
+</tr>
+
+<tr>
+    <td class="label">Gender</td>
+    <td>{{ applicant.gender }}</td>
+</tr>
+
+<tr>
+    <td class="label">Address</td>
+    <td>{{ applicant.address }}</td>
+</tr>
+
+</table>
+<br><br>
+
+<br>
+
+<h2>🎓 Educational Information</h2>
+
+<table>
+
+<tr>
+    <td class="label">University</td>
+    <td>{{ applicant.university }}</td>
+</tr>
+
+<tr>
+    <td class="label">Degree</td>
+    <td>{{ applicant.degree }}</td>
+</tr>
+
+<tr>
+    <td class="label">Semester</td>
+    <td>{{ applicant.semester }}</td>
+</tr>
+
+<tr>
+    <td class="label">Expected Graduation Year</td>
+    <td>{{ applicant.graduation_year }}</td>
+</tr>
+
+<tr>
+    <td class="label">CGPA</td>
+    <td>{{ applicant.cgpa }}</td>
+</tr>
+
+<tr>
+    <td class="label">Preferred Department</td>
+    <td>{{ applicant.department }}</td>
+</tr>
+
+</table>
+
+<br>
+
+<h2>💻 Technical Skills</h2>
+
+<table>
+
+<tr>
+    <td class="label">Skills</td>
+    <td>{{ applicant.skills }}</td>
+</tr>
+
+</table>
+
+<br>
+
+<h2>🌐 Languages</h2>
+
+<table>
+
+<tr>
+    <td class="label">Languages</td>
+    <td>{{ applicant.languages }}</td>
+</tr>
+
+</table>
+
+<br>
+
+<a href="/admin_dashboard" class="btn blue">
+Back
+</a>
+
+</div>
+
+</body>
+</html>
